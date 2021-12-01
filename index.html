@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gender Prediction</title>
+    <link rel="stylesheet" href="./stylesheets/index.css">
+
+</head>
+<body>
+<div class="container">
+    <form>
+        <h1>Mr. or Ms.</h1>
+        <label>Name: </label>
+        <input type="text" name="name" value="" size="20" maxlength="255">
+
+        <input type="radio" id="male" name="gender" value="M">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="F">
+        <label for="male">Female</label>
+
+        <fieldset>
+            <input type="button" value="Submit">
+            <input type="button" value="Save">
+        </fieldset>
+
+    </form>
+
+    <div class="prediction">
+        <h1>Prediction</h1>
+        <label id="gender prediction">Unknown</label>
+        <label id="prediction number">0</label>
+
+        <fieldset>
+            <h1>Saved Answer</h1>
+            <input type="button" value="Clear">
+        </fieldset>
+    </div>
+</div>
+</body>
+</html>

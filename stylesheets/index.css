@@ -1,0 +1,25 @@
+body {
+    background: url("../images/blue_background_simple.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px 30px;
+    padding: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+    opacity: 0.5;
+}
