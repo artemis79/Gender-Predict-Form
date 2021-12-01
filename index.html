@@ -8,27 +8,41 @@
 </head>
 <body>
 <div class="container">
-    <form>
-        <h1>Mr. or Ms.</h1>
-        <label>Name: </label>
-        <input type="text" name="name" value="" size="20" maxlength="255">
 
-        <input type="radio" id="male" name="gender" value="M">
-        <label for="male">Male</label>
-        <input type="radio" id="female" name="gender" value="F">
-        <label for="male">Female</label>
+    <form class="form">
+        <h1>Mr. or Ms.?</h1>
 
-        <fieldset>
+        <div>
+            <label>Name: </label>
+            <input type="text" name="name" value="" size="20" maxlength="255">
+        </div>
+
+        <div class="radio group">
+            <div class="radio input">
+                <input type="radio" id="male" name="gender" value="M">
+                <label for="male">Male</label>
+            </div>
+
+            <div class="radio input">
+                <input type="radio" id="female" name="gender" value="F">
+                <label for="male">Female</label>
+            </div>
+        </div>
+
+        <div class="buttons">
             <input type="button" value="Submit">
             <input type="button" value="Save">
-        </fieldset>
+        </div>
 
     </form>
 
-    <div class="prediction">
+    <div class="form">
         <h1>Prediction</h1>
-        <label id="gender prediction">Unknown</label>
-        <label id="prediction number">0</label>
+
+        <div class="prediction">
+            <label id="gender prediction">Unknown</label>
+            <label id="number prediction">0</label>
+        </div>
 
         <fieldset>
             <h1>Saved Answer</h1>

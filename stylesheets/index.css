@@ -8,13 +8,14 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 10%;
     width: 100%;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 20px 30px;
     padding: 40px;
@@ -22,4 +23,35 @@ body {
     margin-right: auto;
     background-color: #ffffff;
     opacity: 0.5;
+    border-radius: 20px;
+}
+
+
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 30px 20px;
+}
+
+
+.radio.group{
+    display: flex;
+    flex-wrap: wrap;]
+    gap: 10px 5px;
+    flex-direction: column;
+}
+
+.buttons{
+    display: flex;
+    gap: 10px 5px;
+    flex-direction: column;
+    width: 60%;
+
+}
+
+.prediction{
+    display: flex;
+    flex-direction: column;
+
 }
