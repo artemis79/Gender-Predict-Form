@@ -72,8 +72,8 @@ async function sendRequest(e) {
 
     if(jsonPrediction.gender == null) {
         warningField.textContent = "Name not found";
-        predictedGender.value = "Unknown";
-        predictedNumber.value = "0";
+        predictedGender.textContent = "Unknown";
+        predictedNumber.textContent = "0";
         showSavedAnswer(name.value);
         return;
     }
