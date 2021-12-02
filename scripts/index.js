@@ -29,6 +29,14 @@ function checkName(){
     return true;
 }
 
+function showErrorMessage(message) {
+    warningField.textContent = message;
+}
+
+// for handle status code error
+function handleError(response) {
+    showErrorMessage(response.message);
+}
 
 //Fetches name prediction via http get request and returns a json object
 async function getNamePrediction(inputName) {
@@ -94,7 +102,9 @@ async function sendRequest(e) {
 
 //Clears radio button choice
 function clearChoices(){
-    document.querySelector('input[name="gender"]:checked').checked = false;
+    if (document.querySelector('input[name="gender"]:checked') != null)
+        document.querySelector('input[name="gender"]:checked').checked = false;
+    
     name.value = "";
 }
 
@@ -110,16 +120,20 @@ async function saveAnswer(e){
 
     if (radioButton == null){
         let gender = predictedGender.textContent;
-        if(gender == "Unknown")
-            window.alert("No prediction or Chosen answer to save");
+        if(gender == "Unknown") {
+            warningField.textContent = "Nothing to save";
+        }
 
-        else
+        else {
             window.localStorage.setItem(nameValue, gender);
+        }
     }
     else{
         window.localStorage.setItem(nameValue, radioButton.value);
     }
+
     clearChoices();
+    document.querySelector(".answer").style.visibility = "hidden";
 
 }
 
