@@ -1,3 +1,7 @@
+/*
+    Set background image to cover the whole page
+    flexed the body to align container as center
+ */
 body {
     background: url("../images/gender.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -15,6 +19,12 @@ body {
     top: 0; left: 0; bottom: 0; right: 0;
 }
 
+/*
+    flexed container horizontally for form and prediction result
+    justify items from flex start
+    set background transparent
+    make content box as a rounded square
+ */
 .container {
     margin: auto;
     display: flex;
@@ -29,6 +39,10 @@ body {
 }
 
 
+/*
+    flex form contents vertically
+    put gap between elements
+ */
 .form{
     display: flex;
     flex-wrap: wrap;
@@ -37,6 +51,10 @@ body {
 }
 
 
+/*
+   flex radio buttons vertically
+    put gap between elements
+ */
 .radio.group{
     display: flex;
     flex-wrap: wrap;]
@@ -44,6 +62,10 @@ body {
     flex-direction: column;
 }
 
+/*
+    flex radio buttons vertically
+    put gap between elements
+ */
 .buttons{
     display: flex;
     gap: 10px 5px;
@@ -52,12 +74,20 @@ body {
 
 }
 
+/**
+    flex prediction results vertically
+ */
 .prediction{
     display: flex;
     flex-direction: column;
 
 }
 
+/**
+    Answers field set
+    make cornered border
+    flex contents in column with gap between objects
+ */
 .answer{
     display: flex;
     flex-direction: column;
@@ -66,12 +96,20 @@ body {
     align-items: flex-start;
 }
 
+/**
+    warning text
+    set red and bold for emphasize
+ */
 #warning{
     color: red;
     font-size: large;
     font-weight: bold;
 }
 
+/**
+    Set all buttons as rounded
+    with white background and black text and border
+ */
 input[type=button]{
     border-radius: 10px;
     background-color: white;
