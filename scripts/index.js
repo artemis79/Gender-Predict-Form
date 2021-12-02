@@ -104,7 +104,7 @@ async function sendRequest(e) {
 function clearChoices(){
     if (document.querySelector('input[name="gender"]:checked') != null)
         document.querySelector('input[name="gender"]:checked').checked = false;
-    
+
     name.value = "";
 }
 
