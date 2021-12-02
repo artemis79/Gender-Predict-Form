@@ -1,28 +1,30 @@
 body {
-    background: url("../images/blue_background_simple.jpg") no-repeat center center fixed;
+    background: url("../images/gender.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    display: flex;
+    display: grid;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 10%;
+    padding: 100px 0;
     width: 100%;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
 }
 
 .container {
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
     gap: 20px 30px;
     padding: 40px;
-    margin-left: auto;
-    margin-right: auto;
     background-color: #ffffff;
-    opacity: 0.5;
+    opacity: 0.8;
     border-radius: 20px;
 }
 
@@ -62,4 +64,18 @@ body {
     gap: 15px 5px;
     border-radius: 20px;
     align-items: flex-start;
+}
+
+#warning{
+    color: red;
+    font-size: large;
+    font-weight: bold;
+}
+
+input[type=button]{
+    border-radius: 10px;
+    background-color: white;
+    border-color: black;
+    color: black;
+    width: 80%;
 }

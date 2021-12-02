@@ -5,25 +5,26 @@ const predictedGender = document.getElementById('gender_prediction');
 const predictedNumber = document.getElementById('number_prediction');
 const savedAnswer = document.getElementById('saved_answer');
 const clearButton = document.querySelector('.clear.button');
+const warningField = document.getElementById('warning');
 
-
-function checkName(nameValue){
-
+function checkName(){
+    let nameValue = name.value;
     if (nameValue == "") {
-        window.alert("name was empty");
+        warningField.textContent = "name is empty";
         return false;
     }
     if(nameValue.length > 255){
-        window.alert("name too long");
+        warningField.textContent = "name too long";
         return false;
     }
 
     if(!nameValue.match(/^[a-z0-9]+$/i)){
-        window.alert("name not alphanumerical");
+        warningField.textContent = "name not alphanumerical";
         return false;
     }
 
-    return true
+    warningField.textContent = "";
+    return true;
 }
 async function getNamePrediction(inputName) {
     try {
@@ -49,7 +50,7 @@ function showPrediction(jsonPrediction){
 function showSavedAnswer(nameValue){
     let gender = window.localStorage.getItem(nameValue);
     if(gender == null)
-        savedAnswer.textContent = " No Answered Saved yet!";
+        savedAnswer.textContent = " No Answered Saved!";
     else
         savedAnswer.textContent = gender;
 
@@ -58,12 +59,21 @@ function showSavedAnswer(nameValue){
 async function sendRequest(e) {
     let nameValue = name.value;
 
-    if(!checkName(nameValue))
+    if(!checkName())
         return ;
 
     e.preventDefault();
 
     let jsonPrediction = await getNamePrediction(nameValue);
+
+    if(jsonPrediction.gender == null) {
+        warningField.textContent = "Name not found";
+        predictedGender.value = "Unknown";
+        predictedNumber.value = "0";
+        showSavedAnswer(name.value);
+        return;
+    }
+
     showPrediction(jsonPrediction);
     showSavedAnswer(nameValue);
 }
@@ -76,7 +86,7 @@ function clearChoices(){
 async function saveAnswer(e){
     let nameValue = name.value;
 
-    if(!checkName(nameValue))
+    if(!checkName())
         return ;
 
     e.preventDefault();
@@ -99,13 +109,29 @@ async function saveAnswer(e){
 
 async function clearAnswer(e){
     let nameValue = name.value;
-    if(!checkName(nameValue))
+    if(!checkName())
         return;
 
     e.preventDefault();
     window.localStorage.removeItem(nameValue);
 }
 
+document.querySelectorAll('input[type=button]').forEach(function(e) {
+    e.addEventListener('mouseover', function() {
+        this.style.backgroundColor = "black";
+        this.style.color="white";
+    })
+});
+
+
+document.querySelectorAll('input[type=button]').forEach(function(e) {
+    e.addEventListener('mouseout', function() {
+        this.style.backgroundColor = "white";
+        this.style.color="black";
+    })
+});
+
 submitButton.addEventListener('click', sendRequest);
 saveButton.addEventListener('click', saveAnswer);
 clearButton.addEventListener('click', clearAnswer);
+name.addEventListener('input', checkName);
