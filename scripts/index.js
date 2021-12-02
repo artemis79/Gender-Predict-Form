@@ -49,10 +49,14 @@ function showPrediction(jsonPrediction){
 
 function showSavedAnswer(nameValue){
     let gender = window.localStorage.getItem(nameValue);
-    if(gender == null)
+    if(gender == null) {
         savedAnswer.textContent = " No Answered Saved!";
-    else
+        document.querySelector(".answer").style.visibility = "hidden";
+    }
+    else {
         savedAnswer.textContent = gender;
+        document.querySelector(".answer").style.visibility = "visible";
+    }
 
 }
 
@@ -131,6 +135,7 @@ document.querySelectorAll('input[type=button]').forEach(function(e) {
     })
 });
 
+document.querySelector(".answer").style.visibility = "hidden";
 submitButton.addEventListener('click', sendRequest);
 saveButton.addEventListener('click', saveAnswer);
 clearButton.addEventListener('click', clearAnswer);
