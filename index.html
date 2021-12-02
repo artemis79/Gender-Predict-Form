@@ -14,17 +14,17 @@
 
         <div>
             <label>Name: </label>
-            <input class="name" type="text" name="name" value="" size="20" maxlength="255">
+            <input class="name" type="text" name="name" value="" size="20">
         </div>
 
         <div class="radio group">
             <div class="radio input">
-                <input type="radio" id="male" name="gender" value="M">
+                <input type="radio" id="male" name="gender" value="male">
                 <label for="male">Male</label>
             </div>
 
             <div class="radio input">
-                <input type="radio" id="female" name="gender" value="F">
+                <input type="radio" id="female" name="gender" value="female">
                 <label for="male">Female</label>
             </div>
         </div>
@@ -44,9 +44,10 @@
             <label id="number_prediction">0</label>
         </div>
 
-        <fieldset>
-            <h1>Saved Answer</h1>
-            <input type="button" value="Clear">
+        <fieldset class="answer">
+            <h2>Saved Answer</h2>
+            <label id = "saved_answer">No Answer Saved!</label>
+            <input class="clear button" type="button" value="Clear">
         </fieldset>
     </div>
 </div>

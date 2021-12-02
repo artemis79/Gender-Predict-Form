@@ -55,3 +55,11 @@ body {
     flex-direction: column;
 
 }
+
+.answer{
+    display: flex;
+    flex-direction: column;
+    gap: 15px 5px;
+    border-radius: 20px;
+    align-items: flex-start;
+}
